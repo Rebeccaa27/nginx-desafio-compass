@@ -15,53 +15,61 @@
 
 ### Passo 1 **Download da Distribuição Linux**
 
-- Faça o download do arquivo ISO da versão que desejada.
+- Fiz o download do arquivo ISO da versão Debian 12 no site: [Debian](https://www.debian.org/download)
 
-### Passo 2: **Instale a VirtualBox**.
-- Entre no site: [VirtualBox](https://www.virtualbox.org)
-- Baixe e instale na sua maquina. 
+### Passo 2: **Instalação da VirtualBox**.
+- Entrei no site: [VirtualBox](https://www.virtualbox.org)
+- Baixe e instale na maquina. 
 
 ### Passo 3:**Criação e Configurações da Máquina Virtua**l 
 
-- Abra o VirtualBox e aperte o NEW para poder criar uma máquina virtual.
-- Escolha um nome para sua maquina e defina quanto de memoria **RAM** será utilizada **(recomendo pelo menos 2GB).**
-- Selecione a opção para criar um novo disco rígido virtual e ajuste o tamanho do disco que será utilizado **(recomendo que seja no mínimo 30GB).**
-- Após a criação, selecione a máquina e clique em **Settings** ou **Configurações** .
-- Vá para a aba Storage, clique em **Empty**, e adicione o arquivo **ISO** da distribuição Linux baixada e salve.
+- Abri o VirtualBox e apertei o NEW para poder criar uma máquina virtual.
+- Escolhi o nome para minha  maquina e defini quanto de memoria **RAM** seria utilizada. **(utilizei 2GB).**
+- Selecionei a opção para criar um novo disco rígido virtual e ajustei o tamanho do disco. **(utiizado 30GB).**
+- Após a criação, selecionei a máquina e clique em **Settings**.
+- Aba Storage e clique em **Empty**, e adicione o arquivo **ISO** do debian.
 
 ### Passo 4:**Processo da Instalação do Linux**
 
-- Clique sobre a imagem da sua máquina virtual e pressione **"Start"** para iniciar o sistema.
-- O processo de instalação será iniciado. Primeiro, escolha o idioma de sua preferência.
-- Configure o teclado: Selecione a configuração adequada ao layout do seu teclado.
-- Particionamento de disco: Se o disco possui 30GB. Para o particionamento do disco, você pode optar pela opção 'Assistido - usar o disco inteiro' para facilitar o processo. Se preferir fazer o particionamento manual, aqui está as partições que usei no meu disco)**
-- /boot: 300MB **( Esta partição armazena os arquivos necessários para inicializar o sistema).
+- Cliquei sobre a imagem da sua máquina virtual e pressione **"Start"** para iniciar o sistema.
+- O processo de instalação foi iniciado.
+- Escolha o idioma.
+- Configure o teclado.
+- Particionamento de disco: Se o disco possui 30GB. Para o particionamento do disco, aqui está as partições que usei no meu disco)
+- /boot: 300MB **( Esta partição armazena os arquivos necessários para inicializar o sistema)
 - / (sistema de arquivos raiz): 15GB. **(Onde ficam todos os arquivos e pastas principais do sistema).**
 - /home: o restante do espaço disponível.**( Aqui ficam os arquivos pessoais do usuário, como documentos, downloads e configurações).**
 - SWAP: 1,9GB **( Esse espaço é utilizado como memória virtual, que o sistema usa quando a memória RAM está cheia).**
 - Defina o nome de usuário e a senha que desejar para acessar o sistema.
 - Após concluir as configurações iniciais, o sistema iniciará automaticamente a instalação do Debian.
-- Quando solicitado, você terá a opção de instalar um ambiente gráfico. Caso esteja configurando um servidor, pode optar por "Sem ambiente de desktop".
-- No final da instalação, a máquina virtual oferecerá a opção de reiniciar. Selecione "Sim" para completar o processo e iniciar o sistema.
+- No final da instalação, a máquina virtual ofereceu a opção de reiniciar. Selecionei "Sim" para completar o processo e iniciar o sistema.
 
 ### Passo 5: **Acessando a Distro**
-- Ao iniciar a máquina, o terminal será exibido. Para entrar com permissões de usuário root, digite sudo su e pressione Enter.
-- O terminal solicitará a senha que você cadastrou no início da instalação da distribuição.
-- Com a máquina iniciada, você tem a oportunidade de explorar o Linux e se familiarizar com seu funcionamento, comandos e recursos.
-- Caso queria ter uma experiência mais intuitiva e amigável, considere instalar uma interface gráfica. Isso torna o uso do sistema muito mais fácil e agradável para quem está iniciando.
-- Caso queria instalar uma interface, você pode pesquisar sobre as opções disponíveis e escolher a que mais combina com você e vai facilita seu dia a dia.
-- Após escolher a interface gráfica que você deseja instalar, basta abrir o terminal como usuário root e executar o comando de instalação. Por exemplo, para instalar o GNOME, você pode usar o seguinte comando:
+- Ao iniciar a máquina, abri o temrinal. Para entrar com permissões de usuário root, digitei sudo su e pressione Enter.
+- O terminal solicitou o nome e a senha que foram cadastrados no início da instalação da distribuição.
+- Atualizei o meu sistemas com o comando:
+```bash
+apt-get update
+```
+
+```bash
+apt-get upgrade
+```
+- Optei em instalar uma interface gráfica mais intuitiva e amigável.
+- Com terminal aberto no  usuário root e executei o comando de instalação. Optei em instalar a gnome.
   
 ```bash
 apt install gnome
 ```
-- Após a instalação, pode ser necessário reiniciar a máquina. Para reinicar a máquina você pode colocar no terminal o seguinte comando e logo após aoertar ENTER:
+- Após a instalação, reinicei a maquina com o comando:
 
 ```bash
 reboot
 ```
-- Assim que a máquina reiniciar, você verá a nova interface gráfica. Agora, você pode começar a usar o sistema de forma mais intuitiva e interativa.
-### Aproveite a experiência
+- A maquina foi reiniciada, e aproveitei a oportunidade para explorar e entender melhor o Linux.
+- Esse é o  passo a passo de como eu instalei e configurei o Debian na minha maquina virtual usando o VirtualBox.
+
+
 
 # Atividade no Linux
 
