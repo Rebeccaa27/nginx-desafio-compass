@@ -126,6 +126,47 @@ Este script tem como objetivo verificar o status do serviço Nginx, registrando 
 
 ### Estrutura do Script
 
+```bash
+!/bin/bash
+
+# Definindo data e hora na variável. 
+
+datetime=$(date "+%Y-%m-%d %H:%M:%S")
+
+# Diretório e nomes dos arquivos de log nas variáveis.
+
+dir_logs="/var/log/status_nginx"
+online_log="nginx_online.log"
+offline_log="nginx_offline.log"
+
+
+# Verificando se o Nginx está online ou offline.
+if systemctl is-active --quiet nginx; then
+    STATUS="ONLINE"
+    mensagem="O serviço nginx está Online."
+    status_log="$dir_logs/$online_log"
+
+    # Registrando a mensagem no arquivo do log.
+    echo "$datetime - nginx - Status: $status - $mensagem" >> "$status_log_file"
+
+    # Exibindo a mensagem no terminal caso o serviço esteja online
+    echo "$datetime - nginx - Status: $status - $mensagem"
+
+else
+
+    STATUS="OFFLINE"
+    mensagem="O serviço nginx está Offline."
+    status_log="$dir_logs/$offline_log"
+
+    # Registro da mensagem no arquivo do loG.
+    echo "$datetime - nginx - Status: $STATUS - $mensagem" >> "$status_log"
+
+    # Exibindo a mensagem no terminal se o serviço estiver offline.
+    echo "$datetime - nginx - Status: $STATUS - $mensagem"
+fi
+```
+
+
 ###  Definição de Variáveis
 
 - **datetime**: Captura a data e a hora atuais no formato `%Y-%m-%d %H:%M:%S`.
@@ -135,17 +176,17 @@ Este script tem como objetivo verificar o status do serviço Nginx, registrando 
 
 ###  Verificação do Status do Nginx
 
-O script verifica se o Nginx está ativo utilizando o comando `systemctl is-active --quiet nginx`. Dependendo do resultado, as seguintes ações são realizadas:
+O script verifica se o Nginx está ativo utilizando o comando `systemctl is-active --quiet nginx`. Dependendo do resultado, as seguintes ações são executadas:
 
 ### Se o Nginx estiver Online ou Offline:
 - **STATUS**: A variável é definida  como `online`ou òffine`, para cada caso.
 - **mensagem**: Uma mensagem personalizada indicando que o Nginx está online ou offline.
 - **status_log_file**: O caminho do arquivo de log para registros online e offline.
 
-### Registro no Log:
--  echo "$datetime - nginx - Status: $status - $mensagem" >> "$status_log_file"
+### Registra no diretório especifico para cada status definido
+-  echo "$datetime - nginx - Status: $status - $mensagem" >> "$status_log"
 
-### Mensagem de saída no terminal caso ambos os casos de status
+### Mensagem de saída no terminal para os ambos casos de status
 -  echo "$datetime - nginx - Status: $STATUS - $mensagem" 
 
 ### **Execução automatizada do script**
