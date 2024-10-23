@@ -1,56 +1,57 @@
-# Guia de Instalação do Linux em uma Máquina Virtual
+# Instalação do Linux em uma Máquina Virtual
 
 ## Índice
 
-- Passo 1:**Download da Distribuição Linux**
-- Passo 2:**Instalação do VirtualBox**
-- Passo 3**Criação e Configurações da Máquina Virtual** 
-- Passo 4**Processo da Instalação do Linux**
-- Passo 5:**Acessando a Distro**
+- Passo 1: **Download da Distribuição Linux**
+- Passo 2: **Instalação do VirtualBox**
+- Passo 3: **Criação e Configurações da Máquina Virtual** 
+- Passo 4: **Processo da Instalação do Linux**
+- Passo 5: **Acessando a Distro**
   
-
 ## Pré-requisitos
-- Distribuição Linux (no meu caso usei a distro Debian 12), baixe a distro Linux de sua escolha.
+- Distribuição Linux (no meu caso usei a distro Debian 12). Baixe a distro Linux de sua escolha.
 - VirtualBox.
 
-### Passo 1 **Download da Distribuição Linux**
+### Passo 1: **Download da Distribuição Linux**
 
-- Fiz o download do arquivo ISO da versão Debian 12 no site: [Debian](https://www.debian.org/download)
+- Fiz o download do arquivo ISO da versão Debian 12 no site: [Debian](https://www.debian.org/download).
 
-### Passo 2: **Instalação da VirtualBox**.
-- Entrei no site: [VirtualBox](https://www.virtualbox.org)
-- Baixe e instale na maquina. 
+### Passo 2: **Instalação do VirtualBox**
 
-### Passo 3:**Criação e Configurações da Máquina Virtua**l 
+- Entrei no site: [VirtualBox](https://www.virtualbox.org).
+- Baixe e instale na máquina. 
 
-- Abri o VirtualBox e apertei o NEW para poder criar uma máquina virtual.
-- Escolhi o nome para minha  maquina e defini quanto de memoria **RAM** seria utilizada. **(utilizei 2GB).**
-- Selecionei a opção para criar um novo disco rígido virtual e ajustei o tamanho do disco. **(utiizado 30GB).**
-- Após a criação, selecionei a máquina e clique em **Settings**.
-- Aba Storage e clique em **Empty**, e adicione o arquivo **ISO** do debian.
+### Passo 3: **Criação e Configurações da Máquina Virtual**
 
-### Passo 4:**Processo da Instalação do Linux**
+- Abri o VirtualBox e cliquei em **NEW** para criar uma máquina virtual.
+- Escolhi o nome para minha máquina e defini a quantidade de memória **RAM** que seria utilizada **(utilizei 2GB)**.
+- Selecionei a opção para criar um novo disco rígido virtual e ajustei o tamanho do disco **(utilizei 30GB)**.
+- Após a criação, selecionei a máquina e cliquei em **Settings**.
+- Na aba **Storage**, cliquei em **Empty** e adicionei o arquivo **ISO** do Debian.
 
-- Cliquei sobre a imagem da sua máquina virtual e pressione **"Start"** para iniciar o sistema.
+### Passo 4: **Processo da Instalação do Linux**
+
+- Cliquei sobre a imagem da minha máquina virtual e pressionei **"Start"** para iniciar o sistema.
 - O processo de instalação foi iniciado.
-- Escolha o idioma.
-- Configure o teclado.
-- Particionamento de disco: Se o disco possui 30GB. Para o particionamento do disco, aqui está as partições que usei no meu disco)
-- /boot: 300MB **( Esta partição armazena os arquivos necessários para inicializar o sistema)
-- / (sistema de arquivos raiz): 15GB. **(Onde ficam todos os arquivos e pastas principais do sistema).**
-- /home: o restante do espaço disponível.**( Aqui ficam os arquivos pessoais do usuário, como documentos, downloads e configurações).**
-- SWAP: 1,9GB **( Esse espaço é utilizado como memória virtual, que o sistema usa quando a memória RAM está cheia).**
-- Defina o nome de usuário e a senha que desejar para acessar o sistema.
+- Escolhi o idioma.
+- Configurei o teclado.
+- **Particionamento de disco:** Como o disco possui 30GB, as partições que usei foram:
+  - **/boot:** 300MB **(Esta partição armazena os arquivos necessários para inicializar o sistema).**
+  - **/** (sistema de arquivos raiz): 15GB **(Onde ficam todos os arquivos e pastas principais do sistema).**
+  - **/home:** o restante do espaço disponível **(Aqui ficam os arquivos pessoais do usuário, como documentos, downloads e configurações).**
+  - **SWAP:** 1,9GB **(Esse espaço é utilizado como memória virtual, que o sistema usa quando a memória RAM está cheia).**
+- Defini o nome de usuário e a senha que desejava para acessar o sistema.
 - Após concluir as configurações iniciais, o sistema iniciará automaticamente a instalação do Debian.
 - No final da instalação, a máquina virtual ofereceu a opção de reiniciar. Selecionei "Sim" para completar o processo e iniciar o sistema.
 
 ### Passo 5: **Acessando a Distro**
-- Ao iniciar a máquina, abri o temrinal. Para entrar com permissões de usuário root, digitei sudo su e pressione Enter.
+
+- Ao iniciar a máquina, abri o terminal. Para entrar com permissões de usuário root, digitei `sudo su` e pressionei Enter.
 - O terminal solicitou o nome e a senha que foram cadastrados no início da instalação da distribuição.
-- Atualizei o meu sistemas com o comando:
-```bash
-apt-get update
-```
+- Atualizei o meu sistema com os comandos:
+  
+  ```bash
+  apt-get update
 
 ```bash
 apt-get upgrade
@@ -149,17 +150,16 @@ O script verifica se o Nginx está ativo utilizando o comando `systemctl is-acti
 
 ### **Execução automatizada do script**
 - Para realizar a execução da automatização dod script a cada 5 minutos.
-- No terminal 
+- No terminal abri o arquivo de configuração do cron. Ele é um serviço que permite agendar a execução automática de comandos e scripts em intervalos de tempos específicos.
 ```bash
 crontab -e
 ```
-- Selecione qual editor de texto irá realizar
+- Selecionei qual editor de texto irei utilizar
 - Incluido na última linha o seguinte:
 ```bash
 */5****/bin/bash/usr/local/sccripts/validar_nginx.sh
 ```
-- Salve e feche o terminal. Isso irá programar a execução do script a cada 5 minutos.
-
+- Salve e feche o terminal. Com ESC e logo em seguida :wq
 
 ### Resultado das mensagem que irão aparecer quando validar o script - validar_nginx.sh:
 
@@ -169,17 +169,17 @@ crontab -e
 
 
 ### **Versionamento da atividade**
-1- Inicialize um repositório Git no diretório do projeto:
+1- Inicializei um repositório Git no diretório do projeto:
 
 ```bash
 git init
 ```
-2- Adicione os arquivos ao repositório:
+2- Adicionei os arquivos ao repositório:
 
 ```bash
 git add validar_nginx.sh
 ```
-3- Faça o commit das alterações:
+3- Para realizar o commit das alterações:
 
 ```bash
 git commit -m "Inicialização do projeto"
