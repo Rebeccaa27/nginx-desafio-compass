@@ -147,7 +147,7 @@ if systemctl is-active --quiet nginx; then
     status_log="$dir_logs/$online_log"
 
     # Registrando a mensagem no arquivo do log.
-    echo "$datetime - nginx - Status: $status - $mensagem" >> "$status_log_file"
+    echo "$datetime - nginx - Status: $status - $mensagem" >> "$status_log"
 
     # Exibindo a mensagem no terminal caso o serviço esteja online
     echo "$datetime - nginx - Status: $status - $mensagem"
