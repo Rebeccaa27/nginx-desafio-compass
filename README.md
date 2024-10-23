@@ -128,7 +128,7 @@ Este script tem como objetivo verificar o status do serviço Nginx, registrando 
 
 ###  Definição de Variáveis
 
-- **datetime**: Captura a data e a hora atuais no formato `YYYY-MM-DD HH:MM:SS`.
+- **datetime**: Captura a data e a hora atuais no formato `%Y-%m-%d %H:%M:%S`.
 - **dir_logs**: Diretório onde os arquivos de log serão armazenados.
 - **online_log**: Nome do arquivo de log para registros quando o Nginx está online.
 - **offline_log**: Nome do arquivo de log para registros quando o Nginx está offline.
