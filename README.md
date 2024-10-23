@@ -99,14 +99,15 @@ apt-get install nginx
 ```bash
 systemctl status nginx
 ```
-![Checando o status do Nginx](usr/local/scripts/img/status_nginx.png)
+<img src="/img/status_nginx.png">
 
 
 - Checando se o nginx está rodando: 
 ```bash
 ss -tulne
 ```
-![Checando o status do Nginx](usr/local/scripts/img/nginx_rodando.png)
+<img src="/img/nginx_rodando.png">
+
 
 ## 2. **Criar um script de validação**
 ###  Documentação do Script de Validação do Nginx
@@ -154,10 +155,9 @@ crontab -e
 
 ### Resultado final :
 
-![Checando o status do Nginx Online](usr/local/scripts/img/nginx-online.png)
+<img src="/img/nginx-online.png">
 
-
-![Checando o status do Nginx Offline](usr/local/scripts/img/nginx_offline.png)
+<img src="/img/nginx_offline.png">
 
 
 ### **Versionamento da atividade**
