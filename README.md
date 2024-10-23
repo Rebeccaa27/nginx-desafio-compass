@@ -99,7 +99,7 @@ apt-get install nginx
 ```bash
 systemctl status nginx
 ```
-<img src="/img/status.png">
+<img src="/img/status_nginx.png">
 
 
 - Checando se o nginx está rodando: 
