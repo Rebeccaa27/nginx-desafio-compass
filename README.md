@@ -61,11 +61,11 @@ apt install gnome
 reboot
 ```
 - Assim que a máquina reiniciar, você verá a nova interface gráfica. Agora, você pode começar a usar o sistema de forma mais intuitiva e interativa.
-## Aproveite a experiência
+### Aproveite a experiência
 
 # Atividade no Linux
 
-##  Atividade: Documentação do Servidor Nginx
+##  Monitorar o Servidor Nginx
 
 ### Índice
 
