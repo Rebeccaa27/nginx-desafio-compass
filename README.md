@@ -153,7 +153,7 @@ crontab -e
 - Salve e feche o terminal. Isso irá programar a execução do script a cada 5 minutos.
 
 
-### Resultado final :
+### Resultado das mensagem que irão aparecer quando validar o script - validar_nginx.sh:
 
 <img src="/img/nginx-online.png">
 
