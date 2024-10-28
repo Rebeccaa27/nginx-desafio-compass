@@ -124,6 +124,21 @@ ss -tulne
 ### Objetivo
 Este script tem como objetivo verificar o status do serviço Nginx, registrando se ele está online ou offline, e armazenando as informações em arquivos de log específicos.
 
+### Criação do diretório para o script
+Local onde eu criei o script para a validação.
+
+```bash
+cd /usr/local
+```
+```bash
+mkdir scripts
+```
+Para criar e editar o script, utilizei o editor de texto vim:
+
+```bash
+vim validar_nginx.sh
+```
+
 ### Estrutura do Script
 
 ```bash
