@@ -132,7 +132,7 @@ Local onde eu criei o script para a validação.
 cd /usr/local
 ```
 ```bash
-mkdir scripts
+mkdir projeto_nginx
 ```
 Para criar e editar o script, utilizei o editor de texto vim:
 
