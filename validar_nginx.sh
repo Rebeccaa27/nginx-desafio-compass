@@ -27,12 +27,12 @@ if systemctl is-active --quiet $servico; then
 
 
     # Exibindo a mensagem no terminal caso o serviço esteja online
-    echo -e "$datetime - $servico - Status: $STATUS - $mensagem"
+    echo -e "$datetime - $servico - Status: $STATUS - $mensagem" 
 
 else
 
     STATUS="${RED}OFFLINE${RESET}"
-    mensagem="O serviço está inativo, verifique se o Nginx foi interrompido."
+    mensagem="O serviço está inativo."
     status_log="$dir_logs/$offline_log"
 
     # Registro da mensagem no arquivo do loG.
