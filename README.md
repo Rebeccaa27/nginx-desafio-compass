@@ -222,6 +222,12 @@ O script verifica se o Nginx está ativo utilizando o comando `systemctl is-acti
 ### Mensagem de saída no terminal para os ambos casos de status
 -  echo "$datetime - nginx - Status: $STATUS - $mensagem" 
 
+### Permissão de execução
+- Para a permissão de execução escrevi o comando abaixo:
+```bash
+chmod +x validar_nginx.sh
+```
+
 ### **Execução automatizada do script**
 - Para realizar a execução da automatização dod script a cada 5 minutos.
 - No terminal abri o arquivo de configuração do cron. Ele é um serviço que permite agendar a execução automática de comandos e scripts em intervalos de tempos específicos.
