@@ -111,14 +111,6 @@ systemctl status nginx
 
 <img src="/img/status_nginx.png">
 
-
-- Checando se o nginx está rodando: 
-```bash
-ss -tulne | grep ":80 "
-```
-<img src="/img/nginx_rodando.png">
-
-
 ## 2. **Criar um script de validação**
 ###  Documentação do Script de Validação do Nginx
 
