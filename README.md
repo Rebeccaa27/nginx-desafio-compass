@@ -139,7 +139,7 @@ Para criar e editar o script, utilizei o editor de texto vim:
 ```bash
 vim validar_nginx.sh
 ```
-O Local onde crei os diretorios para as o status de log
+O Local onde crei o diretorio para as o status das logs
 
 ```bash
 cd /var/log/status_nginx
