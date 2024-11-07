@@ -114,7 +114,7 @@ systemctl status nginx
 
 - Checando se o nginx está rodando: 
 ```bash
-ss -tulne
+ss -tulne | grep ":80 "
 ```
 <img src="/img/nginx_rodando.png">
 
